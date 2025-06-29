@@ -1,0 +1,348 @@
+body{
+    background-color: rgb(117, 117, 189);
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    height: 500px;
+    width: 500px;
+    margin: auto;
+    border: 5px solid white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+.box{
+    height: 120px;
+    width: 200px;
+    background-color: #FFB200;
+    position: relative;
+    top: 300px;
+    left: 150px;
+    background-image: radial-gradient(#C21010 5px, transparent 5px);
+    background-size: 35px 35px;
+    background-position: -5px -12px;
+}
+
+.b1,.b2{
+    background-color: #FFB200;
+    height: 8px;
+    width: 50px;
+    position: relative;
+}
+
+.b1{
+    right: 48px;
+    transform: rotate(-20deg);
+    transform-origin: right;
+}
+
+.b2{
+    left: 198px;
+    bottom: 8px;
+    transform: rotate(20deg);
+    transform-origin: left;
+}
+
+.dog{
+    position: relative;
+    bottom: 40px;
+    left: 40px;
+    z-index: -1;
+    transition: 1s;
+}
+
+.dog-face{
+    height: 120px;
+    width: 120px;
+    background-color: #d2b48c;
+    border-radius: 50% 50% 40% 40%;
+    position: relative; /* This is the key fix */
+}
+
+.snout{
+    height: 60px;
+    width: 80px;
+    background-color: #e3c19b;
+    border-radius: 50%;
+    position: absolute;
+    top: 55px;
+    left: 20px;
+}
+
+.left-ear, .right-ear{
+    height: 80px;
+    width: 40px;
+    background-color: #a0522d;
+    position: absolute;
+    top: -20px;
+    border-radius: 40px 0 0 40px;
+}
+
+.left-ear{
+    left: -5px;
+    transform: rotate(-35deg);
+}
+
+.right-ear{
+    left: 85px;
+    border-radius: 0 40px 40px 0;
+    transform: rotate(35deg);
+}
+
+.left-eye, .right-eye{
+    width: 13px;
+    height: 15px;
+    position: absolute;
+    top: 50px;
+}
+
+.left-eye{
+    left: 35px;
+}
+
+.right-eye{
+    left: 70px;
+}
+
+.eye{
+    background-color: #252525;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    20%{
+        transform: scaleY(0);
+    }
+}
+
+.nose{
+    width: 20px;
+    height: 15px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 65px;
+    left: 50px;
+}
+
+.hat{
+    height: 0;
+    width: 0;
+    border-bottom: 100px solid #FF1E00;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    position: relative;
+    bottom: 206px;
+    left: 50px;
+    transform: rotate(15deg);
+}
+
+.deco{
+    position: relative;
+    right: 2px;
+    top: 2px;
+}
+
+.d1,.d2,.d3,.d4{
+    background-color: #FFB200;
+    height: 40px;
+    width: 5px;
+    position: relative;
+}
+
+.d1{
+    bottom: 20px;
+}
+
+.d2{
+    transform: rotate(45deg);
+    bottom: 60px;
+}
+
+.d3{
+    transform: rotate(90deg);
+    bottom: 100px;
+}
+
+.d4{
+    transform: rotate(135deg);
+    bottom: 140px;
+}
+
+.speech-bubble {
+    position: absolute;
+    background-color: white;
+    color: #333;
+    padding: 10px;
+    border-radius: 15px;
+    bottom: 190px;
+    left: 115px;
+    font-family: sans-serif;
+    font-size: 14px;
+    width: 90px;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.4s ease-out 0.8s, transform 0.4s ease-out 0.8s;
+    z-index: 3;
+}
+
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right-color: white;
+    border-left: 0;
+}
+
+.hands{
+    height: 30px;
+    width: 140px;
+    position: relative;
+    bottom: 110px;
+    left: -12px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 1s 0.5s;
+}
+
+.hand-left,.hand-right{
+    height: 35px;
+    width: 35px;
+    background-color: #d2b48c;
+    border-radius: 50% 50% 40% 40%;
+    position: absolute;
+    top: 20px;
+}
+
+.hand-left{
+    left: 25px;
+    transform: rotate(20deg);
+}
+
+.hand-right{
+    left: 75px;
+    transform: rotate(-20deg);
+}
+
+.bouquet{
+    position: relative;
+    width: 120px;
+    height: 80px;
+    bottom: 195px;
+    left: -2px;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 1s 0.5s, transform 1s 0.5s;
+    transform: translateY(20px);
+}
+
+.hibiscus {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+}
+
+.hibiscus:nth-child(1) {
+    top: 10px;
+    left: 30px;
+    transform: scale(0.9);
+}
+.hibiscus:nth-child(2) {
+    top: 35px;
+    left: 5px;
+    transform: scale(1);
+}
+.hibiscus:nth-child(3) {
+    top: 35px;
+    left: 55px;
+    transform: scale(0.8);
+}
+
+.hibiscus .petal {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(to top, #ff4b4b, #ffaaaa);
+    border-radius: 50% 0 50% 50%;
+    transform-origin: bottom right;
+}
+
+.hibiscus .petal:nth-child(1) { transform: rotate(0deg); }
+.hibiscus .petal:nth-child(2) { transform: rotate(72deg); }
+.hibiscus .petal:nth-child(3) { transform: rotate(144deg); }
+.hibiscus .petal:nth-child(4) { transform: rotate(216deg); }
+.hibiscus .petal:nth-child(5) { transform: rotate(288deg); }
+
+.hibiscus .stamen {
+    position: absolute;
+    width: 5px;
+    height: 25px;
+    background: #ffc400;
+    top: 15px;
+    left: 27px;
+    border-radius: 5px;
+}
+
+
+.box.active .dog {
+    transform: translateY(-85px);
+    z-index: 1;
+}
+
+.box.active .bouquet {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.box.active .hands {
+    opacity: 1;
+}
+
+.box.active .speech-bubble {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.shadow{
+    background-color: #000;
+    height: 30px;
+    width: 250px;
+    border-radius: 50%;
+    position: relative;
+    top: 285px;
+    left: 120px;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+
+/* ▬▬▬.◙.▬▬▬
+═▂▄▄▓▄▄▂
+◢◤ █▀▀████▄▄▄◢◤
+█▄ █ █▄ ███▀▀▀▀▀▀╬
+◥█████◤
+══╩══╩═
+╬═╬
+╬═╬
+╬═╬    made by guga
+╬═╬    *inspired by virtual wiz*
+╬═╬   
+╬═╬☻/
+╬═╬/▌
+╬═╬/  \
+. */
