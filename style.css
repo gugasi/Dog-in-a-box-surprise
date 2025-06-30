@@ -58,48 +58,60 @@ body{
 }
 
 .dog-face{
-    height: 120px;
+    height: 110px;
     width: 120px;
-    background-color: #d2b48c;
-    border-radius: 50% 50% 40% 40%;
-    position: relative; /* This is the key fix */
+    background-color: #a9a9a9; /* Schnauzer grey */
+    border-radius: 40% 40% 30% 30%;
+    position: relative;
+}
+
+.beard {
+    width: 100px;
+    height: 70px;
+    background-color: #f5f5f5; /* Lighter grey for beard */
+    position: absolute;
+    bottom: -20px;
+    left: 10px;
+    border-radius: 0 0 50% 50%;
 }
 
 .snout{
-    height: 60px;
-    width: 80px;
-    background-color: #e3c19b;
+    height: 50px;
+    width: 70px;
+    background-color: #c0c0c0; /* Slightly darker snout */
     border-radius: 50%;
     position: absolute;
-    top: 55px;
-    left: 20px;
+    top: 50px;
+    left: 25px;
+    z-index: 1;
 }
 
 .left-ear, .right-ear{
-    height: 80px;
-    width: 40px;
-    background-color: #a0522d;
+    height: 60px;
+    width: 30px;
+    background-color: #808080; /* Darker grey for ears */
     position: absolute;
-    top: -20px;
-    border-radius: 40px 0 0 40px;
+    top: -15px;
+    border-radius: 20px 5px 5px 20px;
 }
 
 .left-ear{
-    left: -5px;
-    transform: rotate(-35deg);
+    left: 0px;
+    transform: rotate(-45deg);
 }
 
 .right-ear{
-    left: 85px;
-    border-radius: 0 40px 40px 0;
-    transform: rotate(35deg);
+    left: 90px;
+    border-radius: 5px 20px 20px 5px;
+    transform: rotate(45deg);
 }
 
 .left-eye, .right-eye{
     width: 13px;
     height: 15px;
     position: absolute;
-    top: 50px;
+    top: 45px;
+    z-index: 2;
 }
 
 .left-eye{
@@ -130,9 +142,32 @@ body{
     background-color: #000;
     border-radius: 50%;
     position: absolute;
-    top: 65px;
+    top: 55px;
     left: 50px;
+    z-index: 2;
 }
+
+.tennis-ball {
+    width: 35px;
+    height: 35px;
+    background-color: #d4ff33; /* Tennis ball color */
+    border-radius: 50%;
+    position: absolute;
+    top: 75px;
+    left: 42px;
+    z-index: 3;
+    overflow: hidden;
+}
+
+.tennis-ball .seam {
+    width: 100%;
+    height: 5px;
+    background-color: #b8de2e; /* Seam color */
+    position: absolute;
+    top: 15px;
+    transform: rotate(-30deg);
+}
+
 
 .hat{
     height: 0;
@@ -222,7 +257,7 @@ body{
 .hand-left,.hand-right{
     height: 35px;
     width: 35px;
-    background-color: #d2b48c;
+    background-color: #a9a9a9;
     border-radius: 50% 50% 40% 40%;
     position: absolute;
     top: 20px;
@@ -238,38 +273,23 @@ body{
     transform: rotate(-20deg);
 }
 
-.bouquet{
-    position: relative;
-    width: 120px;
-    height: 80px;
-    bottom: 195px;
-    left: -2px;
-    opacity: 0;
-    z-index: 1;
-    transition: opacity 1s 0.5s, transform 1s 0.5s;
-    transform: translateY(20px);
-}
+/* Removed .bouquet styles */
 
 .hibiscus {
     width: 60px;
     height: 60px;
     position: absolute;
+    bottom: 15px; /* Position flower relative to the hand */
 }
 
-.hibiscus:nth-child(1) {
-    top: 10px;
-    left: 30px;
-    transform: scale(0.9);
+.hand-left .hibiscus {
+    right: 5px;
+    transform: rotate(-15deg) scale(0.7); /* Scale down and rotate */
 }
-.hibiscus:nth-child(2) {
-    top: 35px;
+
+.hand-right .hibiscus {
     left: 5px;
-    transform: scale(1);
-}
-.hibiscus:nth-child(3) {
-    top: 35px;
-    left: 55px;
-    transform: scale(0.8);
+    transform: rotate(15deg) scale(0.7); /* Scale down and rotate */
 }
 
 .hibiscus .petal {
@@ -303,10 +323,7 @@ body{
     z-index: 1;
 }
 
-.box.active .bouquet {
-    opacity: 1;
-    transform: translateY(0);
-}
+/* Removed .box.active .bouquet rule */
 
 .box.active .hands {
     opacity: 1;
@@ -329,7 +346,6 @@ body{
     opacity: 0.2;
     z-index: -1;
 }
-
 
 /* ▬▬▬.◙.▬▬▬
 ═▂▄▄▓▄▄▂
